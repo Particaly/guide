@@ -6,10 +6,10 @@ title: 图片引入
 测试内容图应该写上表明图片尺寸的占位图，可以用线上占位图生成服务，如：
 
 ```html
-http://placeholder.qiniudn.com/300x200
+http://iph.href.lu/300x200
 ```
 
-![image](http://placeholder.qiniudn.com/300x200)
+![image](http://iph.href.lu/300x200)
 
 
 
@@ -33,6 +33,27 @@ CSS 中图片引入不需要引号
 .jdc {
     background-image: url(icon.png);
 }
+```
+
+对于图片的引用，建议使用css属性 `object-fit`
+```vue
+<template>
+    <div class="img-holder">
+        <img src="" alt="">
+    </div>
+</template>
+
+<style lang="scss">
+.img-holder{
+    width: 100px;
+    height: 100px;
+    img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+</style>
 ```
 
 ### CSS Sprites VS Data URIs
